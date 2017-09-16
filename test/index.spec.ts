@@ -29,6 +29,19 @@ describe("@async-generator/filter", () => {
     expect(await equal(source(), filter(source(), (x) => x > 1 && x < 3)));
   })
 
+  it("should await predicate", async () => {
+    let source = async function* () {
+      yield 1; yield 2; yield 3; yield 4;
+    }
+    let expected = async function* () {
+      yield 2; 
+    }
+
+    let predicate = (x) => new Promise<boolean>(r=>setTimeout(()=>r(x > 1 && x < 3), 10));
+
+    expect(await equal(source(), filter(source(), predicate)));
+  })
+
   it("should pass item index (sequence order) of value to predicate", async () => {
     let source = async function* () {
       yield "a"; yield "b"; yield "c"; yield "d";
