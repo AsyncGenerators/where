@@ -1,7 +1,7 @@
 # filter
 ![logo](https://avatars1.githubusercontent.com/u/31987273?v=4&s=100)
 
-filter a sequence
+filter an iterable sequence 
 
 [![NPM version][npm-image]][npm-url]
 [![Travis Status][travis-image]][travis-url]
@@ -29,7 +29,7 @@ Additionally, the `module` entry points to a `es2015` distribution, which can be
 
 `source` must have a `[Symbol.asyncIterator]` or `[Symbol.iterator]` property. If both are present only `[Symbol.asyncIterator]` is used. 
 
-`predicate(item, index)` should return a boolean (optionally as Promise)  to signal whether the item should be yielded. 
+`predicate(item, index)` should return a boolean (optionally as Promise) to signal whether the item should be yielded. The second parameter is the `index` of the item as it appears in the source sequence. 
 
 ## Example
 

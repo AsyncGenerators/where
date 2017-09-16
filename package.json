@@ -1,6 +1,6 @@
 {
   "name": "@async-generators/filter",
-  "description": "filter a sequence",
+  "description": "filter an iterable sequence ",
   "version": "0.1.0",
   "author": {
     "name": "Meirion Hughes",
