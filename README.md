@@ -59,8 +59,8 @@ node --harmony-async-iteration example.js
 
 output:
 ```
-1
 2
+3
 ```
 ## Typescript
 
